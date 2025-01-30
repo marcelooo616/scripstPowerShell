@@ -39,3 +39,30 @@ O **Gestor de Tarefas** é uma ferramenta que facilita a execução de scripts d
 - **Permissão para executar scripts**: Caso necessário, execute o seguinte comando no PowerShell para permitir a execução de scripts:
   ```powershell
   Set-ExecutionPolicy Bypass -Scope Process
+
+  ```
+
+## 🚀 Instalação e Execução
+
+### Execução Direta via PowerShell
+
+Para executar o Gestor de Tarefas sem baixar todo o repositório, utilize o seguinte comando no PowerShell:
+```powershell
+irm https://raw.githubusercontent.com/marcelooo616/scripstPowerShell/main/main.ps1 | iex
+
+```
+Este comando faz o download e executa o script principal diretamente.
+
+### Execução Via Atalho do Windows
+
+ ```powershell
+C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypass -Command "Start-Process powershell.exe -Verb RunAs -ArgumentList 'irm \"https://raw.githubusercontent.com/marcelooo616/scripstPowerShell/main/install.ps1\" | iex'"
+
+```
+
+
+## 📂 Estrutura do Projeto
+- main.ps1: Script principal que inicia a aplicação.
+- Components/: Contém scripts de componentes reutilizáveis, como estilos de botões.
+- Assets/: Contém recursos como imagens utilizadas na interface gráfica.
+
