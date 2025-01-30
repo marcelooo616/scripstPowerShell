@@ -36,11 +36,6 @@ O **Gestor de Tarefas** é uma ferramenta que facilita a execução de scripts d
 
 - **Sistema Operacional**: Windows 10 ou superior.
 - **PowerShell**: Versão 5.1 ou superior.
-- **Permissão para executar scripts**: Caso necessário, execute o seguinte comando no PowerShell para permitir a execução de scripts:
-  ```powershell
-  Set-ExecutionPolicy Bypass -Scope Process
-
-  ```
 
 ## 🚀 Instalação e Execução
 
