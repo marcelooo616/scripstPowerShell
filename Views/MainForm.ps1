@@ -52,7 +52,7 @@ function Show-MainForm {
      $textBox.Multiline = $true
      $textBox.ReadOnly = $true
      $TextBox.TextAlign = [System.Windows.Forms.HorizontalAlignment]::Center
-     $textBox.Text = "Atencao: os procedimentos abaixo sao para problemas de um modo geral. Se o cliente estiver recebendo uma mensagem ou codigo de erro especifico, pesquise ele no support.xbox.com antes de realizar esses procedimentos."
+     $textBox.Text = "Atencao: os procedimentos abaixo sao para problemas de um modo geral. Se voce estiver recebendo uma mensagem ou codigo de erro especifico, pesquise ele antes de realizar esses procedimentos."
      $textBox.Size = New-Object System.Drawing.Size(300, 185)
      $textBox.Location = New-Object System.Drawing.Point(450, 390)
      $textBox.Font = New-Object System.Drawing.Font("Segoe UI", 14, [System.Drawing.FontStyle]::Bold)
