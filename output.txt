@@ -1,0 +1,19 @@
+
+Erro: 740
+
+Permiss�es elevadas obrigat�rias para execu��o do DISM. 
+Use um prompt de comandos com privil�gios elevados para concluir estas tarefas.
+
+
+Microsoft.XboxGameCallableUI   Microsoft.XboxGameCallableUI_cw5n1h2txyewy
+Microsoft.XboxGamingOverlay    Microsoft.XboxGamingOverlay_8wekyb3d8bbwe
+Microsoft.XboxIdentityProvider Microsoft.XboxIdentityProvider_8wekyb3d8bbwe
+Microsoft.Xbox.TCUI            Microsoft.Xbox.TCUI_8wekyb3d8bbwe
+
+Get-LocalUser | Where-Object {$_.Enabled -eq $true}
+Get-LocalGroupMember -Group "Administradores"
+
+powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "& {Invoke-WebRequest -Uri 'https://github.com/marcelooo616/scripstPowerShell/blob/main/InterfacePowerShell.ps1' -OutFile $env:TEMP\InterfacePowerShell.ps1.ps1; Start-Process -FilePath powershell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File $env:TEMP\InterfacePowerShell.ps1.ps1' -Wait}"
+
+
+
