@@ -62,7 +62,11 @@ C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypas
 
 
 ## 📂 Estrutura do Projeto
+
 - main.ps1: Script principal que inicia a aplicação.
 - Components/: Contém scripts de componentes reutilizáveis, como estilos de botões.
 - Assets/: Contém recursos como imagens utilizadas na interface gráfica.
 
+## 📄 Licença
+
+Este projeto está licenciado sob a Licença MIT.
