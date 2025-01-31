@@ -21,8 +21,8 @@ function New-ButtonCreateUserAdm {
             # Nome do usuário
             $username = "XBOX_TEST"
     
-            # Buscar o grupo de administradores dinamicamente (exatamente "Administradores")
-            $adminGroup = (Get-LocalGroup | Where-Object { $_.Name -eq "Administradores" }).Name
+           # Buscar o grupo de administradores dinamicamente usando o SID
+             $adminGroup = Get-LocalGroup -SID "S-1-5-32-544"
             
             if (-not $adminGroup) {
                 [System.Windows.Forms.MessageBox]::Show("Nao foi possível encontrar o grupo 'Administradores' no sistema.", "Erro", [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Error)

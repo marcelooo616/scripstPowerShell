@@ -17,24 +17,41 @@ function New-ButtonCheckAndRepair {
     $ParentForm.Controls.Add($ButtonCheckAndRepair)
 
     $buttonCheckAndRepair.Add_Click({
-      
-        $commandSfc = "sfc /scannow"
-        Write-Log "Executando: $commandSfc"
-        Start-Process -FilePath "powershell.exe" -ArgumentList "-Command $commandSfc" -Verb RunAs -Wait
-        Write-Log "Verificação SFC concluída."
+        try {
+            # Função para executar comandos com elevação de privilégios
+            function Invoke-AdminCommand {
+                param (
+                    [string]$command
+                )
+                Write-Host "Executando: $command"
+                Start-Process -FilePath "powershell.exe" -ArgumentList "-Command $command" -Verb RunAs -Wait
+                Write-Host "Comando concluído: $command"
+            }
     
- 
-        $commandDism = "DISM /Online /Cleanup-Image /RestoreHealth"
-        Write-Log "Executando: $commandDism"
-        Start-Process -FilePath "powershell.exe" -ArgumentList "-Command $commandDism" -Verb RunAs -Wait
-        Write-Log "DISM concluído."
+            # Executar o comando SFC
+            Invoke-AdminCommand -command "sfc /scannow"
     
+            # Executar o comando DISM
+            Invoke-AdminCommand -command "DISM /Online /Cleanup-Image /RestoreHealth"
     
-        [System.Windows.Forms.MessageBox]::Show("Verificação e reparo concluídos com sucesso!", "Concluído", [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Information)
+            # Exibir mensagem de sucesso
+            [System.Windows.Forms.MessageBox]::Show(
+                "Verificação e reparo concluídos com sucesso!",
+                "Concluído",
+                [System.Windows.Forms.MessageBoxButtons]::OK,
+                [System.Windows.Forms.MessageBoxIcon]::Information
+            )
+        } catch {
+            # Exibir mensagem de erro em caso de falha
+            [System.Windows.Forms.MessageBox]::Show(
+                "Erro durante a execução: $_",
+                "Erro",
+                [System.Windows.Forms.MessageBoxButtons]::OK,
+                [System.Windows.Forms.MessageBoxIcon]::Error
+            )
+        }
     })
 
     
-    
-
     return $buttonCheckAndRepair
 }
