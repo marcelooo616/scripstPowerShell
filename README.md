@@ -50,12 +50,7 @@ irm https://raw.githubusercontent.com/marcelooo616/scripstPowerShell/main/main.p
 ```
 Este comando faz o download e executa o script principal diretamente.
 
-### Execução Via Atalho do Windows
 
- ```powershell
-C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypass -Command "Start-Process powershell.exe -Verb RunAs -ArgumentList 'irm \"https://raw.githubusercontent.com/marcelooo616/scripstPowerShell/main/install.ps1\" | iex'"
-
-```
 
 
 ## 📂 Estrutura do Projeto
