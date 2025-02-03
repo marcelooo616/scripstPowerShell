@@ -5,7 +5,7 @@ function Show-MainForm {
     # Configurações da janela principal
     $form = New-Object System.Windows.Forms.Form
     $form.Text = "Gestor de Tarefas"
-    $form.Size = New-Object System.Drawing.Size(800, 900)
+    $form.Size = New-Object System.Drawing.Size(800, 1000)
     $form.BackColor = [System.Drawing.Color]::FromArgb(12, 12, 12) # Fundo escuro estilo PowerShell
     $form.ForeColor = [System.Drawing.Color]::White
     $form.Font = New-Object System.Drawing.Font("Consolas", 10, [System.Drawing.FontStyle]::Regular)
@@ -88,6 +88,12 @@ function Show-MainForm {
     New-ButtonCreateUserAdm -ParentForm $form -Y $YPos | Out-Null
     $YPos += $Spacing
     New-ButtonInplace -ParentForm $form -Y $YPos | Out-Null
+    $YPos += $Spacing
+    New-ButtonVerificarFusoHorario -ParentForm $form -Y $YPos | Out-Null
+    $YPos += $Spacing
+    New-ButtonDesinstalarAtualizacoes -ParentForm $form -Y $YPos | Out-Null
+
+
 
     # Botão de sair
     $buttonExit = New-Object System.Windows.Forms.Button

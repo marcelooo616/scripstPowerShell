@@ -1,4 +1,4 @@
-Add-Type -AssemblyName "System.Windows.Forms"
+﻿Add-Type -AssemblyName "System.Windows.Forms"
 
 $scriptPath = Split-Path -Parent $MyInvocation.MyCommand.Path
 . "$scriptPath/Components/ButtonStyles.ps1"
@@ -14,6 +14,8 @@ $scriptPath = Split-Path -Parent $MyInvocation.MyCommand.Path
 . "$scriptPath/Components/ButtonResetNetworkSettings.ps1"
 . "$scriptPath/Components/ButtonCreateUserAdm.ps1"
 . "$scriptPath/Components/ButtonInplace.ps1"
+. "$scriptPath/Components/ButtonVerificarFusoHorario.ps1"
+. "$scriptPath/Components/ButtonDesinstalarAtualizacoes.ps1"
 . "$scriptPath/Views/MainForm.ps1"
 
 # Iniciar a aplicação
