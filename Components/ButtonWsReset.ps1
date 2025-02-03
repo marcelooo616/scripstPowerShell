@@ -18,9 +18,11 @@ function New-ButtonWaReset {
 
     $buttonWsReset.Add_Click({
         $command = "wsreset.exe"
-        Write-Log "Executando: $command"
+        Write-Host "Executando: $command"
         Start-Process -FilePath "powershell.exe" -ArgumentList "-Command $command" -Verb RunAs -Wait 
-        Write-Log "Wsreset concluída."
+        $global:checklist.Add("Resetada a cache da Microsoft Store usando WsReset.") | Out-Null
+        Write-Host "Wsreset concluída."
+        
     })
 
     

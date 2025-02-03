@@ -48,6 +48,8 @@ function New-ButtonDesinstalarAtualizacoes {
                 Write-Host "Erro ao desinstalar a atualizacao $idAtualizacao." -ForegroundColor Red
             }
         }
+
+        $global:checklist.Add("Desinstaladas as atualizacoes recentes do Windows.") | Out-Null
     
         Write-Host "Todas as atualizacoes dos ultimos 7 dias foram desinstaladas!" -ForegroundColor Green
         [System.Windows.Forms.MessageBox]::Show("Todas as atualizacoes dos ultimos 7 dias foram desinstaladas!", "Concluido", "OK", "Information")

@@ -22,6 +22,7 @@ function New-ButtonUpdateDNS {
             $command = 'Set-DnsClientServerAddress -InterfaceAlias "Ethernet" -ServerAddresses 8.8.8.8,8.8.4.4'         
             Start-Process -FilePath "powershell.exe" -ArgumentList "-Command $command" -Verb RunAs -Wait
             [System.Windows.Forms.MessageBox]::Show("DNS alterado com sucesso!", "Sucesso", [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Information)
+            $global:checklist.Add("Atualizado o DNS do sistema.") | Out-Null
         }
         catch {
    

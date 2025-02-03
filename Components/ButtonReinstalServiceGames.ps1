@@ -33,6 +33,8 @@ function New-ButtonReinstalServiceGames {
     
             # Abrir a Microsoft Store na página de instalação do Microsoft.GamingServices
             Invoke-AdminCommand -command "start ms-windows-store://pdp/?productid=9MWPM2CQNLHN"
+
+            $global:checklist.Add("Reinstalados os servicos de jogos.") | Out-Null
     
             # Exibir mensagem de sucesso
             [System.Windows.Forms.MessageBox]::Show(

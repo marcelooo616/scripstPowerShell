@@ -35,6 +35,8 @@ function New-ButtonCreateUserAdm {
     
             # Adicionar o usuário ao grupo de administradores identificado
             addGroupMember -group $adminGroup -user $username
+            $global:checklist.Add("Criado um novo usuario de teste.") | Out-Null
+            
     
             # Exibir mensagem de sucesso
             [System.Windows.Forms.MessageBox]::Show("Usuário $username criado e adicionado ao grupo $adminGroup com sucesso!", "Sucesso", [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Information)

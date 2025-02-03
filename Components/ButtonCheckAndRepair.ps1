@@ -33,6 +33,8 @@ function New-ButtonCheckAndRepair {
     
             # Executar o comando DISM
             Invoke-AdminCommand -command "DISM /Online /Cleanup-Image /RestoreHealth"
+
+            $global:checklist.Add("Verificados e reparados arquivos do sistema.") | Out-Null
     
             # Exibir mensagem de sucesso
             [System.Windows.Forms.MessageBox]::Show(
@@ -41,6 +43,8 @@ function New-ButtonCheckAndRepair {
                 [System.Windows.Forms.MessageBoxButtons]::OK,
                 [System.Windows.Forms.MessageBoxIcon]::Information
             )
+
+            
         } catch {
             # Exibir mensagem de erro em caso de falha
             [System.Windows.Forms.MessageBox]::Show(

@@ -32,8 +32,11 @@ function New-ButtonResetNetworkSettings {
 
             Write-Host "Liberando o endereço IP atual..."
             ipconfig /release
+
+            $global:checklist.Add("Resetadas as configurações de rede.") | Out-Null
     
             Write-Host "Redefinição das configurações de rede concluída com sucesso!" -ForegroundColor Green
+
         }
         catch {
             Write-Host "Ocorreu um erro durante a redefinição das configurações de rede: $_" -ForegroundColor Red

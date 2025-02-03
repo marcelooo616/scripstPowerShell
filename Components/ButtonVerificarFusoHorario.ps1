@@ -1,7 +1,7 @@
 Add-Type -AssemblyName "System.Windows.Forms"
 function New-ButtonVerificarFusoHorario {
     param (
-        [string]$Text = "Verificar Fuso Horário", 
+        [string]$Text = "Verificar Fuso Horario", 
         [int]$Width = 250,
         [int]$Height = 50,
         [int]$X = 10,
@@ -78,6 +78,8 @@ function New-ButtonVerificarFusoHorario {
         Pais/Regiao: $($info.geoId) - $($info.NomePaisRegiao)
 "@
     })
+
+    $global:checklist.Add("Verificado e ajustado o fuso horario do sistema.") | Out-Null
     
     
     
