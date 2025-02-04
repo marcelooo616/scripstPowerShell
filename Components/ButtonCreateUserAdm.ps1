@@ -35,7 +35,8 @@ function New-ButtonCreateUserAdm {
     
             # Adicionar o usuário ao grupo de administradores identificado
             addGroupMember -group $adminGroup -user $username
-            $global:checklist.Add("Criado um novo usuario de teste.") | Out-Null
+            
+            AdicionarItemChecklist"Criado um novo usuario de teste."
             
     
             # Exibir mensagem de sucesso

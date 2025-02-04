@@ -58,7 +58,7 @@ function New-ButtonReinstalXbox {
             # Executar a função para reinstalar pacotes Xbox
             Reinstall-XboxPackages
 
-            $global:checklist.Add("Reinstalados os servicos do Xbox.") | Out-Null
+            AdicionarItemChecklist "Reinstalados os servicos do Xbox."
     
             # Exibir mensagem de sucesso
             [System.Windows.Forms.MessageBox]::Show(

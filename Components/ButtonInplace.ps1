@@ -92,7 +92,7 @@ function New-ButtonInplace {
     
                 # Exibir mensagem de sucesso
                 [System.Windows.Forms.MessageBox]::Show("Download do Media Creation Tool concluído com sucesso! O programa será aberto.", "Sucesso", [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Information)
-                $global:checklist.Add("Realizado um reparo do Windows via Inplace Upgrade.") | Out-Null
+                AdicionarItemChecklist "Realizado um reparo do Windows via Inplace Upgrade."
             } catch {
                 # Exibir mensagem de erro
                 [System.Windows.Forms.MessageBox]::Show("Erro ao baixar ou executar o Media Creation Tool: $($_.Exception.Message)", "Erro", [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Error)

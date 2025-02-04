@@ -1,6 +1,7 @@
 function Show-MainForm {
     # Importar componentes
     . "$PSScriptRoot/../Components/ButtonStyles.ps1"
+    . "$PSScriptRoot/../Components/Abs.ps1"
 
     # Configurações da janela principal
     $form = New-Object System.Windows.Forms.Form
@@ -109,8 +110,8 @@ function Show-MainForm {
     $copyButton.FlatAppearance.BorderSize = 0
     $copyButton.Font = New-Object System.Drawing.Font("Segoe UI", 10, [System.Drawing.FontStyle]::Bold)
     $copyButton.Add_Click({
-    $texto = ($global:checklist -join "`n")  # Juntar a lista com quebras de linha
-    [System.Windows.Forms.Clipboard]::SetText($texto)  # Copiar para a área de transferência
+       
+    [System.Windows.Forms.Clipboard]::SetText($global:checklists)
     [System.Windows.Forms.MessageBox]::Show("Checklist copiada!", "Sucesso")  # Mensagem de sucesso
     })
 
@@ -129,7 +130,7 @@ function Show-MainForm {
     $buttonExit.Font = New-Object System.Drawing.Font("Segoe UI", 10, [System.Drawing.FontStyle]::Bold)
     $buttonExit.Add_Click({ 
         $form.Close()
-        $global:checklist.Clear() | Out-Null
+        $global:checklist.Clear()
      })
     $form.Controls.Add($buttonExit)
 

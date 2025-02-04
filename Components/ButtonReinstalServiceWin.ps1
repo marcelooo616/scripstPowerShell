@@ -36,7 +36,7 @@ function New-ButtonReinstalServiceWin {
     
         # Executar o comando em uma nova instância do PowerShell com privilégios administrativos
         Start-Process -FilePath "powershell.exe" -ArgumentList "-NoProfile -ExecutionPolicy Bypass -Command `"& {$escapedCommand}`"" -Verb RunAs -Wait
-        $global:checklist.Add("Reinstalados os servicos principais do Windows.") | Out-Null
+        AdicionarItemChecklist "Reinstalados os servicos principais do Windows."
     })
     
 

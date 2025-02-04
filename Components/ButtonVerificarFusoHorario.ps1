@@ -20,6 +20,7 @@ function New-ButtonVerificarFusoHorario {
     $buttonVerificarFusoHorario.Add_Click({
         # Função para mapear GeoID para nome de país/região
         function Get-GeoIDName($geoId) {
+            
             $geoTable = @{
                 32 = "Argentina"
                 36 = "Austrália"
@@ -38,6 +39,7 @@ function New-ButtonVerificarFusoHorario {
             }
             return $geoTable[$geoId]
         }
+
     
         # Obtém o fuso horário atual do sistema
         $timeZone = Get-TimeZone
@@ -62,7 +64,9 @@ function New-ButtonVerificarFusoHorario {
             GeoID             = $geoId
             NomePaisRegiao    = $nomePaisRegiao
         }
-    
+
+        AdicionarItemChecklist "Verificado e ajustado o fuso horario do sistema."
+       
         # Exibe o relatório em uma caixa de mensagem
         Write-Host  Write-Host @"
         Relatorio de Fuso Horario e Regiao
@@ -77,9 +81,10 @@ function New-ButtonVerificarFusoHorario {
         Idioma do Sistema: $($info.IdiomaSistema)
         Pais/Regiao: $($info.geoId) - $($info.NomePaisRegiao)
 "@
-    })
+        
+ })
 
-    $global:checklist.Add("Verificado e ajustado o fuso horario do sistema.") | Out-Null
+    
     
     
     
