@@ -46,7 +46,7 @@ O **Gestor de Tarefas** é uma ferramenta que facilita a execução de scripts d
 
 Para executar o Gestor de Tarefas sem baixar todo o repositório, utilize o seguinte comando no PowerShell:
 ```powershell
-irm https://raw.githubusercontent.com/marcelooo616/scripstPowerShell/main/main.ps1 | iex
+irm https://github.com/marcelooo616/scripstPowerShell/raw/main/install.ps1 | iex
 
 ```
 Este comando faz o download e executa o script principal diretamente.
