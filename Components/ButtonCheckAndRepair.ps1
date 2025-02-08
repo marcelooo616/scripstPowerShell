@@ -18,6 +18,8 @@ function New-ButtonCheckAndRepair {
 
     $buttonCheckAndRepair.Add_Click({
         try {
+
+            
             # Função para executar comandos com elevação de privilégios
             function Invoke-AdminCommand {
                 param (

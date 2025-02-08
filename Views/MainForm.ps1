@@ -1,13 +1,13 @@
 function Show-MainForm {
     # Importar componentes
     . "$PSScriptRoot/../Components/ButtonStyles.ps1"
-    . "$PSScriptRoot/../Components/Abs.ps1"
+   
 
     # Configurações da janela principal
     $form = New-Object System.Windows.Forms.Form
     $form.Text = "Gestor de Tarefas"
     $form.Size = New-Object System.Drawing.Size(800, 1000)
-    $form.BackColor = [System.Drawing.Color]::FromArgb(12, 12, 12) # Fundo escuro estilo PowerShell
+    $form.BackColor = [System.Drawing.Color]::FromArgb(4, 20, 36) # Fundo escuro estilo PowerShell
     $form.ForeColor = [System.Drawing.Color]::White
     $form.Font = New-Object System.Drawing.Font("Consolas", 10, [System.Drawing.FontStyle]::Regular)
     $form.StartPosition = "CenterScreen"
@@ -18,7 +18,7 @@ function Show-MainForm {
     $labelTitle = New-Object System.Windows.Forms.Label
     $labelTitle.Text = "Gestor de Tarefas"
     $labelTitle.Font = New-Object System.Drawing.Font("Segoe UI", 18, [System.Drawing.FontStyle]::Bold)
-    $labelTitle.ForeColor = [System.Drawing.Color]::FromArgb(0, 120, 215)
+    $labelTitle.ForeColor = [System.Drawing.Color]::FromArgb(135, 188, 241)
     $labelTitle.AutoSize = $true
     $labelTitle.Location = New-Object System.Drawing.Point(20, 20)
     $form.Controls.Add($labelTitle)
@@ -106,13 +106,10 @@ function Show-MainForm {
     $copyButton.Location = New-Object System.Drawing.Point(650, 850)
     $copyButton.BackColor = [System.Drawing.Color]::FromArgb(64, 64, 64)
     $copyButton.ForeColor = [System.Drawing.Color]::White
-    $copyButton.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
-    $copyButton.FlatAppearance.BorderSize = 0
     $copyButton.Font = New-Object System.Drawing.Font("Segoe UI", 10, [System.Drawing.FontStyle]::Bold)
     $copyButton.Add_Click({
-       
-    [System.Windows.Forms.Clipboard]::SetText($global:checklists)
-    [System.Windows.Forms.MessageBox]::Show("Checklist copiada!", "Sucesso")  # Mensagem de sucesso
+        . "$PSScriptRoot/../Components/Abs.ps1"
+        Show-Form
     })
 
 
@@ -125,12 +122,9 @@ function Show-MainForm {
     $buttonExit.Location = New-Object System.Drawing.Point(650, 900)
     $buttonExit.BackColor = [System.Drawing.Color]::FromArgb(64, 64, 64)
     $buttonExit.ForeColor = [System.Drawing.Color]::White
-    $buttonExit.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
-    $buttonExit.FlatAppearance.BorderSize = 0
     $buttonExit.Font = New-Object System.Drawing.Font("Segoe UI", 10, [System.Drawing.FontStyle]::Bold)
     $buttonExit.Add_Click({ 
         $form.Close()
-        $global:checklist.Clear()
      })
     $form.Controls.Add($buttonExit)
 

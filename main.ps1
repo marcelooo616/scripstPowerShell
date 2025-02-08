@@ -9,7 +9,7 @@ $scriptPath = Split-Path -Parent $MyInvocation.MyCommand.Path
 . "$scriptPath/Components/ButtonReinstalServiceGames.ps1"
 . "$scriptPath/Components/ButtonReinstalServiceWin.ps1"
 . "$scriptPath/Components/ButtonCheckAndRepair.ps1"
-. "$scriptPath/Components/ButtonRestartUpdateServices.ps1"
+. "$scriptPath/Components/ButtonRestartUpdateServices.ps1" 
 . "$scriptPath/Components/ButtonUpdateDNS.ps1"
 . "$scriptPath/Components/ButtonResetNetworkSettings.ps1"
 . "$scriptPath/Components/ButtonCreateUserAdm.ps1"
