@@ -65,7 +65,7 @@ function New-ButtonVerificarFusoHorario {
             NomePaisRegiao    = $nomePaisRegiao
         }
 
-        AdicionarItemChecklist "Verificado e ajustado o fuso horario do sistema."
+        
        
         # Exibe o relatório em uma caixa de mensagem
         Write-Host  Write-Host @"

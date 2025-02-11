@@ -36,7 +36,7 @@ function New-ButtonCheckAndRepair {
             # Executar o comando DISM
             Invoke-AdminCommand -command "DISM /Online /Cleanup-Image /RestoreHealth"
 
-            AdicionarItemChecklist "Verificados e reparados arquivos do sistema."
+           
             # Exibir mensagem de sucesso
             [System.Windows.Forms.MessageBox]::Show(
                 "Verificação e reparo concluídos com sucesso!",

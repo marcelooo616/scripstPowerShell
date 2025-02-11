@@ -64,7 +64,7 @@ function New-ButtonRestartUpdateServices {
     
             # Exibir mensagem de sucesso na interface gráfica
             [System.Windows.Forms.MessageBox]::Show("Serviços do Windows Update e BITS reiniciados com sucesso!", "Sucesso", [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Information)
-            AdicionarItemChecklist "Reiniciado o servico do Windows Update."
+            
         }
         catch {
             Write-Error "Ocorreu um erro ao reiniciar os serviços: $_"

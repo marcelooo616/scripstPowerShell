@@ -18,7 +18,7 @@ function New-ButtonRepairServiceGames {
 
     $ButtonRepairServiceGames.Add_Click({
         Start-Process -FilePath "$scriptPath/GamingRepairTool.exe" -Wait -NoNewWindow
-        AdicionarItemChecklist "Reparados os servicos de jogos do Windows." 
+        
     })
     
 

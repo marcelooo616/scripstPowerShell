@@ -19,7 +19,6 @@ function New-ButtonVersionWin {
     $ButtonVersionWin.Add_Click({
         $command = "winver.exe"
         Start-Process -FilePath "powershell.exe" -ArgumentList "-Command $command" 
-        AdicionarItemChecklist "Verificado a versao do Windows."
        
     })
     
