@@ -18,8 +18,6 @@ function New-ButtonCheckAndRepair {
 
     $buttonCheckAndRepair.Add_Click({
         try {
-
-            
             # Função para executar comandos com elevação de privilégios
             function Invoke-AdminCommand {
                 param (
@@ -44,8 +42,7 @@ function New-ButtonCheckAndRepair {
                 [System.Windows.Forms.MessageBoxButtons]::OK,
                 [System.Windows.Forms.MessageBoxIcon]::Information
             )
-
-            
+              
         } catch {
             # Exibir mensagem de erro em caso de falha
             [System.Windows.Forms.MessageBox]::Show(
