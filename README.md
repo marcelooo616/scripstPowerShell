@@ -50,6 +50,10 @@ Para executar o Gestor de Tarefas sem baixar todo o repositório, utilize o segu
 irm https://github.com/marcelooo616/scripstPowerShell/raw/main/install.ps1 | iex
 irm "https://api.onedrive.com/v1.0/shares/s!AqlA9aJMnoKPhYwZ13uWt-77GWdxIA/root/content" | iex
 
+Link de Instalação 01 =  irm "https://objectstorage.sa-saopaulo-1.oraclecloud.com/n/gr7nymvqgbkz/b/script_powershell/o/ins.ps1" | iex  
+Link de Instalação 02 =  irm "https://gr7nymvqgbkz.objectstorage.sa-saopaulo-1.oci.customer-oci.com/n/gr7nymvqgbkz/b/script_powershell/o/ins.ps1" | iex                 
+ 
+
 ```
 Este comando faz o download e executa o script principal diretamente.
 
