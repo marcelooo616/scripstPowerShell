@@ -2,8 +2,11 @@
 
 Bem-vindo ao repositório **Gestor de Tarefas**! Este projeto oferece uma interface gráfica desenvolvida em PowerShell para auxiliar na execução de diversas tarefas de manutenção e reparo no Windows.
 
+![alt text](![image](https://github.com/user-attachments/assets/db765c67-8935-4996-9967-1fa5ec3e0a1e)
+)
 ![alt text](image-1.png)
 ![alt text](image-2.png)
+
 
 
 ## 📋 Índice
